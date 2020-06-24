@@ -1,8 +1,8 @@
-# jv - Java Version (Manager)
+# jv – Java Version (Manager)
 
 Zsh script for managing the JVM/JDK version in the current Shell instance.
 
-<sup>Could've just called it `jvm` though.</sup>
+<sup>Should've called it `JVM` though.</sup>
 
 ## Setup and usage
 
