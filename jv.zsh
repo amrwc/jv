@@ -89,7 +89,6 @@ version="$([ -n "$disambiguation" ] && echo "$disambiguation" || echo "$supplied
 if /usr/libexec/java_home -v "$version" >/dev/null 2>&1; then
     JAVA_HOME="$(/usr/libexec/java_home -v "$version")"
     export JAVA_HOME
-    # shellcheck disable=SC2016
     print_coloured 'green' '$JAVA_HOME is now set to the following path:'
     print_coloured 'white' "$JAVA_HOME"
 else
