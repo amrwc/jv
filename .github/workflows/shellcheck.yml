@@ -1,0 +1,25 @@
+name: ShellCheck
+
+on:
+  push:
+    paths:
+      - '.github/workflows/shellcheck.yml'
+      - '**.zsh'
+
+jobs:
+  shellcheck:
+    name: ShellCheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up the repository
+        uses: actions/checkout@v2
+
+      # https://github.com/marketplace/actions/shellcheck
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@master
+        env:
+          # This is a huge hack that disables the following error:
+          # SC1071: ShellCheck only supports sh/bash/dash/ksh scripts. Sorry!
+          # It disables this rule, which is not ideal: https://github.com/koalaman/shellcheck/wiki/Sc1073
+          # See the discussion on the topic: https://github.com/koalaman/shellcheck/issues/809
+          SHELLCHECK_OPTS: -e SC1071
