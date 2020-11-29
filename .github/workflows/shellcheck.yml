@@ -23,3 +23,5 @@ jobs:
           # It disables this rule, which is not ideal: https://github.com/koalaman/shellcheck/wiki/Sc1073
           # See the discussion on the topic: https://github.com/koalaman/shellcheck/issues/809
           SHELLCHECK_OPTS: -e SC1071
+        with:
+          severity: error, warning, info, style
