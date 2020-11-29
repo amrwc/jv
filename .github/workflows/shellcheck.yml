@@ -24,4 +24,4 @@ jobs:
           # See the discussion on the topic: https://github.com/koalaman/shellcheck/issues/809
           SHELLCHECK_OPTS: -e SC1071
         with:
-          severity: error, warning, info, style
+          severity: style
